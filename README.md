@@ -31,7 +31,7 @@ For a complete demo see the demo project (under `/demo` in this project).
 ## It's not really a link
 
 What the user sees walks and talks like a link, but it is not a link
-in the normal HTML way, i.e. `<a href="...">text</a>. This means the user
+in the normal HTML way, i.e. `<a href="...">text</a>`. This means the user
 cannot hoover over the link and see where it will take him. Whether this
 is good or bad is up to you to decide.
 
