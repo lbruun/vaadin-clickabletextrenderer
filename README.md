@@ -38,5 +38,13 @@ is good or bad is up to you to decide.
 The text is styled with `link` and this it why it will display as if it was
 a link.
 
+## Advanced use
+
+ClickableTextRenderer renders `String` input. However, whatever is in the 
+string is interpreted as HTML. This means you can do some pretty advanced
+stuff like using FontAwesome icons or whatever. The downside is that 
+you may want to protect your application against unwanted HTML injection attempts.
+This all depends on what it is you are rendering.
+
 
 
