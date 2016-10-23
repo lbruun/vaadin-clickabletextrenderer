@@ -16,6 +16,7 @@ package org.vaadin.community.addon.renderers.demo;
 
 import com.vaadin.data.Container;
 import com.vaadin.data.util.BeanItemContainer;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -23,7 +24,9 @@ import java.util.Objects;
 /**
  *
  */
-public class DemoPerson {
+public class DemoPerson implements Serializable {
+    
+    private static final long serialVersionUID = 939349319756L;
     
     private final String id;
     private final String firstName;

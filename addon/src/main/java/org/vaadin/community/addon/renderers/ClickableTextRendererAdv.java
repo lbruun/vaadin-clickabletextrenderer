@@ -13,7 +13,9 @@
  */
 package org.vaadin.community.addon.renderers;
 
+import org.vaadin.community.addon.renderers.client.ClickableText;
 import com.vaadin.ui.renderers.ClickableRenderer;
+import java.io.Serializable;
 
 /**
  * A renderer which makes some text look like a hyperlink and the
@@ -21,12 +23,18 @@ import com.vaadin.ui.renderers.ClickableRenderer;
  * in {@code <a href="blabla">link</a>} but is simply some text
  * which can have a click listener attached to it.
  * 
- * <p>The renderer expects the PRESENTATION type of the column
- * to be of type {@code String}.
+ * <p>This form allows the text to be HTML and furthermore supports
+ * tooltip on the link.
  * 
- * @see ClickableTextRendererAdv
+ * <p>The renderer expects the PRESENTATION type of the column
+ * to be of type {@link ClickableText} so a {@code Converter}
+ * will be needed on the column as well. {@link AbstractClickableTextConverter}
+ * provides a quick way to create such a converter.
  */
-public class ClickableTextRenderer extends ClickableRenderer<String> {
+public class ClickableTextRendererAdv extends ClickableRenderer<ClickableText>
+        implements Serializable {
+
+    private static final long serialVersionUID = 446324529862L;
 
     /**
      * Creates a new clickable text renderer.
@@ -34,8 +42,8 @@ public class ClickableTextRenderer extends ClickableRenderer<String> {
      * @param nullRepresentation the textual representation of {@code null}
      * value
      */
-    public ClickableTextRenderer(String nullRepresentation) {
-        super(String.class, nullRepresentation);
+    public ClickableTextRendererAdv(String nullRepresentation) {
+        super(ClickableText.class, nullRepresentation);
     }
 
     /**
@@ -46,7 +54,7 @@ public class ClickableTextRenderer extends ClickableRenderer<String> {
      * @param nullRepresentation the textual representation of {@code null}
      * value
      */
-    public ClickableTextRenderer(RendererClickListener listener,
+    public ClickableTextRendererAdv(RendererClickListener listener,
             String nullRepresentation) {
         this(nullRepresentation);
         addClickListener(listener);
@@ -55,7 +63,7 @@ public class ClickableTextRenderer extends ClickableRenderer<String> {
     /**
      * Creates a clickable text renderer.
      */
-    public ClickableTextRenderer() {
+    public ClickableTextRendererAdv() {
         this("");
     }
 
@@ -65,7 +73,7 @@ public class ClickableTextRenderer extends ClickableRenderer<String> {
      *
      * @param listener the click listener to register
      */
-    public ClickableTextRenderer(RendererClickListener listener) {
+    public ClickableTextRendererAdv(RendererClickListener listener) {
         this(listener, "");
     }
 

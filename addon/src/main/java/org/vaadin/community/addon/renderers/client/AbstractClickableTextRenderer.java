@@ -13,13 +13,21 @@
  */
 package org.vaadin.community.addon.renderers.client;
 
+import com.google.gwt.core.shared.GWT;
 import com.google.gwt.user.client.ui.InlineHTML;
+import com.vaadin.client.renderers.ClickableRenderer;
 import com.vaadin.client.widget.grid.RendererCellReference;
 
-public class VClickableTextRenderer extends AbstractClickableTextRenderer<String> {
+public abstract class AbstractClickableTextRenderer<T> extends ClickableRenderer<T, InlineHTML> {
     
     @Override
-    public void render(RendererCellReference cell, String text, InlineHTML inlineHTML) {
-        inlineHTML.setText(text);
-    }    
+    public InlineHTML createWidget() {
+        InlineHTML a = GWT.create(InlineHTML.class);
+        a.addClickHandler(this);
+        a.setStylePrimaryName("v-link");
+        return a;
+    }
+
+    @Override
+    public abstract void render(RendererCellReference cell, T data, InlineHTML inlineHTML);
 }

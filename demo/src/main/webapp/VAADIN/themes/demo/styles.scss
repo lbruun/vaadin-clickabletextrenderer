@@ -7,9 +7,10 @@ $darkgreen: darken($green, 30%);
 // Prefix all selectors in your theme with .demo
 .demo {
 
-	// Include valo theme styles in your theme
+	// Include valo theme styles in demo theme
 	@include valo;
 
+        // Disable cell focus feature in Grid. It's disturbing.
         .v-grid-cell-focused:before {
             display: none !important;
         }

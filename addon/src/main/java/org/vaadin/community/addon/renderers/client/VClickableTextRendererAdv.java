@@ -16,10 +16,17 @@ package org.vaadin.community.addon.renderers.client;
 import com.google.gwt.user.client.ui.InlineHTML;
 import com.vaadin.client.widget.grid.RendererCellReference;
 
-public class VClickableTextRenderer extends AbstractClickableTextRenderer<String> {
+public class VClickableTextRendererAdv extends AbstractClickableTextRenderer<ClickableText> {
     
     @Override
-    public void render(RendererCellReference cell, String text, InlineHTML inlineHTML) {
-        inlineHTML.setText(text);
+    public void render(RendererCellReference cell, ClickableText data, InlineHTML inlineHTML) {
+        if (data.isHTML) {
+            inlineHTML.setHTML(data.value);
+        } else {
+            inlineHTML.setText(data.value);
+        }
+        if (data.description != null) {
+            inlineHTML.setTitle(data.description);
+        }
     }    
 }

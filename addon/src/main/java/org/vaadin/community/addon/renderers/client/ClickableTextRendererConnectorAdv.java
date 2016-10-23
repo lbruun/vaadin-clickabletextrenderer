@@ -18,14 +18,14 @@ import com.vaadin.client.connectors.ClickableRendererConnector;
 import com.vaadin.client.renderers.ClickableRenderer.RendererClickHandler;
 import com.vaadin.shared.ui.Connect;
 import elemental.json.JsonObject;
-import org.vaadin.community.addon.renderers.ClickableTextRenderer;
+import org.vaadin.community.addon.renderers.ClickableTextRendererAdv;
 
-@Connect(ClickableTextRenderer.class)
-public class ClickableTextRendererConnector extends ClickableRendererConnector<String> {
-    
+@Connect(ClickableTextRendererAdv.class)
+public class ClickableTextRendererConnectorAdv extends ClickableRendererConnector<ClickableText> {
+
     @Override
-    public VClickableTextRenderer getRenderer() {
-        return (VClickableTextRenderer) super.getRenderer();
+    public VClickableTextRendererAdv getRenderer() {
+        return (VClickableTextRendererAdv) super.getRenderer();
     }
 
     @Override
