@@ -5,6 +5,8 @@ This is a Renderer for Grid in Vaadin 7.
 It allows text in a cell to be rendered as a clickable link. The typical use-case
 is for **drill-down** within the Grid.
 
+![2016-10-23 02_52_54-linktextrenderer add-on demo](https://cloud.githubusercontent.com/assets/1903550/19625174/95a3a1b0-9911-11e6-81f8-c1f16d9d160f.png)
+
 ## Usage
 
 The renderer inherits from `ClickableRenderer` so the use is the same.
