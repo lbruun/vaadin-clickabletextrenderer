@@ -74,4 +74,7 @@ double-clicking will enter edit mode. This is not a very logical for
 an end-user, IMHO.
 
 
+## Bug reports, contributions, etc
 
+You are welcome to file a ticket here in GitHub's Issue Tracker. If you want
+something changed / expanded upon then why not file a pull request?
