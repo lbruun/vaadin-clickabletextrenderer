@@ -26,6 +26,24 @@ public class ClickableText implements Serializable {
     private static final long serialVersionUID = 44635476862L;
 
     /**
+     * Creates an instance with no values set.
+     */
+    public ClickableText() {
+    }
+
+    /**
+     * Creates an instance with the given values.
+     * @param value see {@link #value}
+     * @param isHTML see {@link #isHTML}
+     * @param description {@link #description}
+     */
+    public ClickableText(String value, boolean isHTML, String description) {
+        this.value = value;
+        this.isHTML = isHTML;
+        this.description = description;
+    }
+    
+    /**
      * The values that will be rendered. This can be either plain text
      * (when {@link #isHTML} is {@code false}) or HTML 
      * (when {@link #isHTML} is {@code true}).
@@ -36,7 +54,7 @@ public class ClickableText implements Serializable {
      * Defines if the value should be interpreted as plain text
      * or HTML. Default is {@code false}.
      * 
-     * <p>Note that the application will become suspectible to cross-side
+     * <p>Note that the application will become susceptible to cross-side
      * scripting attacks when this value is {@code true}. It is the responsibility
      * of the application to check that {@code value} isn't some harmful HTML.
      */
