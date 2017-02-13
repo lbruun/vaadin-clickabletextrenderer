@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Presentation value for use with 
  * {@link org.vaadin.community.addon.renderers.ClickableTextRendererAdv ClickableTextRendererAdv}.
  */
-public class ClickableText implements Serializable {
+public class ClickableText implements Serializable, Comparable<ClickableText> {
 
     private static final long serialVersionUID = 44635476862L;
 
@@ -65,5 +65,25 @@ public class ClickableText implements Serializable {
      * Set to {@code null} to disable.
      */
     public String description = null;
+
+
+    /**
+     * Necessary to allow a column based on this object to be sortable.
+     * @param o
+     * @return 
+     */
+    @Override
+    public int compareTo(ClickableText o) {
+        if (value == null && o == null)  {
+            return 0;
+        }
+        if (value == null) {
+            return -1;
+        }
+        if (o == null) {
+            return 1;
+        }
+        return value.compareTo(o.value);
+    }
     
 }
