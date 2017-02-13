@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.vaadin.community.addon</groupId>
         <artifactId>clickabletextrenderer-parent</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.0.2</version>
     </parent>
     <artifactId>clickabletextrenderer-demo</artifactId>
     <packaging>war</packaging>
