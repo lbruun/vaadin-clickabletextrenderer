@@ -4,7 +4,7 @@
     <groupId>org.vaadin.community.addon</groupId>
     <artifactId>clickabletextrenderer-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <name>Vaadin - ClickableTextRenderer Add-on Root</name>
 
     <prerequisites>
@@ -44,7 +44,7 @@
         <connection>scm:git:https://github.com/phansson/vaadin-clickabletextrenderer</connection> 
         <developerConnection>scm:git:https://github.com/phansson/vaadin-clickabletextrenderer</developerConnection> 
         <url>https://github.com/phansson/vaadin--clickabletextrenderer</url> 
-      <tag>clickabletextrenderer-parent-1.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
     
     <build>
