@@ -62,12 +62,15 @@ public class DemoUI extends UI
      * Listener which determines what happens when a city is clicked upon.
      */
     private ClickableRenderer.RendererClickListener getCityClickListener() {
-        return (ClickableRenderer.RendererClickEvent event) -> {
-            DemoPerson rowClicked = (DemoPerson) event.getItemId();
-            
-            Notification.show("You clicked",
-                    "A city : " + rowClicked.getCity(),
-                    Notification.Type.HUMANIZED_MESSAGE);
+        return new ClickableRenderer.RendererClickListener() {
+            @Override
+            public void click(ClickableRenderer.RendererClickEvent event) {
+                DemoPerson rowClicked = (DemoPerson) event.getItemId();
+
+                Notification.show("You clicked",
+                        "A city : " + rowClicked.getCity(),
+                        Notification.Type.HUMANIZED_MESSAGE);
+            }
         };
     }
     
@@ -75,12 +78,16 @@ public class DemoUI extends UI
      * Listener which determines what happens when a company is clicked upon.
      */
     private ClickableRenderer.RendererClickListener getCompanyClickListener() {
-        return (ClickableRenderer.RendererClickEvent event) -> {
-            DemoPerson rowClicked = (DemoPerson) event.getItemId();
-            
-            Notification.show("You clicked",
-                    "A company : " + rowClicked.getCompany(),
-                    Notification.Type.HUMANIZED_MESSAGE);
+        return new ClickableRenderer.RendererClickListener() {
+            @Override
+            public void click(ClickableRenderer.RendererClickEvent event) {
+                DemoPerson rowClicked = (DemoPerson) event.getItemId();
+
+                Notification.show("You clicked",
+                        "A company : " + rowClicked.getCompany(),
+                        Notification.Type.HUMANIZED_MESSAGE);
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
         };
     }
 
